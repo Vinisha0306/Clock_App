@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorSchemeSeed: Colors.deepPurple,
       ),
-      home: ClockPage(),
+      home: const ClockPage(),
     );
   }
 }

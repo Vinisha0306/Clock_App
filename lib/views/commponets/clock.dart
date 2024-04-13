@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Widget clock1({required size, required d}) {
+Widget clock1({required size, required d, required isimage}) {
   return Container(
     padding: EdgeInsets.all(16),
     alignment: Alignment.center,
@@ -11,7 +11,9 @@ Widget clock1({required size, required d}) {
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.6),
+          color: isimage == true
+              ? Colors.white.withOpacity(0.6)
+              : Colors.deepPurple.withOpacity(0.6),
           shape: BoxShape.circle,
         ),
         child: Stack(
@@ -36,7 +38,9 @@ Widget clock1({required size, required d}) {
                 indent: size.height / 10,
                 endIndent: size.width / 2 - 16,
                 thickness: 4,
-                color: Colors.white,
+                color: isimage == true
+                    ? Colors.deepPurple.withOpacity(0.6)
+                    : Colors.white.withOpacity(0.6),
               ),
             ),
 
@@ -48,7 +52,9 @@ Widget clock1({required size, required d}) {
                 indent: 40,
                 endIndent: size.width / 2 - 16,
                 thickness: 2.5,
-                color: Colors.white,
+                color: isimage == true
+                    ? Colors.deepPurple.withOpacity(0.6)
+                    : Colors.white.withOpacity(0.6),
               ),
             ),
 

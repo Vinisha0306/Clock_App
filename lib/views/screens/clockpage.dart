@@ -177,7 +177,12 @@ class _ClockPageState extends State<ClockPage> {
         ),
       ),
       appBar: AppBar(
-        title: const Text('Clock'),
+        title: const Text(
+          'Clock',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: Center(
         child: Container(
@@ -197,7 +202,7 @@ class _ClockPageState extends State<ClockPage> {
               // analog clock
               Visibility(
                 visible: _isAnalog,
-                child: clock1(size: size, d: d),
+                child: clock1(size: size, d: d, isimage: _isimage),
               ),
               // strap
               Visibility(
@@ -341,11 +346,15 @@ class _ClockPageState extends State<ClockPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      digital_row(d: d, isdigital: _isDigital),
+                      digital_row(
+                          d: d, isdigital: _isDigital, isimage: _isimage),
                       Text(
                         "${day[d.weekday - 1]} , ${d.day.toString()} ${month[d.month - 1]}",
-                        style:
-                            const TextStyle(fontSize: 20, color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: _isimage == true
+                                ? Colors.white
+                                : Colors.black87),
                       ),
                     ],
                   ),

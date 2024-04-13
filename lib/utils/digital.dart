@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-Widget digital_row({required d, required isdigital}) {
+Widget digital_row({required d, required isdigital, required isimage}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
         "${d.hour.toString().padLeft(2, '0')} : ",
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 70,
-          color: Colors.white,
+          color: isimage == true ? Colors.white : Colors.black87,
         ),
       ),
       Column(
@@ -17,17 +17,17 @@ Widget digital_row({required d, required isdigital}) {
         children: [
           Text(
             d.minute.toString().padLeft(2, '0'),
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 29,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: isimage == true ? Colors.white : Colors.black87,
             ),
           ),
           Text(
             d.second.toString().padLeft(2, '0'),
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 29,
-              color: Colors.white,
+              color: isimage == true ? Colors.white : Colors.black87,
             ),
           ),
         ],
